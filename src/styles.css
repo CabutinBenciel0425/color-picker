@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  width: 100px;
+  height: 50px;
+}
+
+.color-bar {
+  width: 750px;
+  height: 25px;
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    magenta,
+    red
+  );
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.scroll-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 4px 4px -4px inset,
+    rgba(0, 0, 0, 0.3) 0px 4px 4px -4px inset;
+  position: absolute;
+  cursor: pointer;
+  top: -10px;
+  left: 0;
+}
