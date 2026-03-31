@@ -8,9 +8,6 @@ export default function ScrollableColorPicker({ setBgColor }) {
   const [btnSize, setBtnSize] = useState(null);
   const [btnX, setBtnX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const percentage =
-    boxSize && btnSize ? btnX / (boxSize.width - btnSize.width) : 0;
-  const hue = percentage * 360;
 
   useEffect(() => {
     const rectBar = bar.current.getBoundingClientRect();
@@ -31,14 +28,12 @@ export default function ScrollableColorPicker({ setBgColor }) {
   function onMouseDown(e) {
     const offset = e.clientX - boundingRectBar.left - btnX;
     setDragOffset(offset);
-    console.log("offset", offset);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
   }
 
   function onMouseMove(e) {
     let posX = e.clientX - boundingRectBar.left - dragOffset;
-    console.log(posX);
     const maxX = boxSize.width - btnSize.width;
     if (posX < 0) posX = 0;
     if (posX > maxX) posX = maxX;
